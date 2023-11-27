@@ -1,7 +1,7 @@
 ## Pflichtenheft / Lastenheft
 
-* Das Pflichtenheft beschreibt in konkreter Form, **wie der Auftragnehmer die Anforderungen des Auftraggebers zu lösen gedenkt** – das sogenannte wie und womit.
-* Der Auftraggeber beschreibt vorher im Lastenheft möglichst präzise die Gesamtheit der Forderungen;
+* Das **Pflichtenheft** beschreibt in konkreter Form, wie der Auftragnehmer die Anforderungen des Auftraggebers zu lösen gedenkt – **das sogenannte wie und womit.**
+* Der Auftraggeber beschreibt vorher im **Lastenheft** möglichst präzise die Gesamtheit der Forderungen;
     * Was er **entwickelt oder produziert** haben möchte
 * Erst wenn der Auftraggeber das Pflichtenheft akzeptiert, sollte die eigentliche Umsetzungsarbeit beim Auftragnehmer beginnen
 
