@@ -1,5 +1,7 @@
 # Cisco Packet Tracer Intro
 
+Try with
+3560-24PS
 
 ## Basic Device setup
 
