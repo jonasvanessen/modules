@@ -37,7 +37,7 @@ Dabei orientieren sie sich an bestimmten Leitfragen und beantworten sie, zum Bei
 * So habe ich mich heute gefühlt.
 * Ich bin zufrieden mit meiner Leistung, weil ...
 
-### Praktische Beispiele von einzelnen Punkten / Sätzen
+## Praktische Beispiele von einzelnen Punkten / Sätzen
 
 * Meiner Meinung nach war ich sehr konzentriert und habe zielorientiert gearbeitet. Ich wusste was ich zu erledigen habe und wie ich Vorgehen muss. Deshalb würde ich nächstes Mal weiterhin so arbeiten
 * Für mich war es hilfreich das ich Zuhause arbeiten konnte und somit niemand da war der mich gestört hat. 
