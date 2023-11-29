@@ -1,0 +1,30 @@
+### Lernjournal
+
+
+## Grund aus Sicht der Studenten
+
+Soll die Lernenden zum Nachdenken anregen über;
+* ihren Lernprozess
+* ihre Lernresultate
+
+Soll die Selbstreflexion und Selbsteinschätzung der Schülerinnen und Schüler fördern:
+* Die Lernenden werden angeregt, ihre Leistungen und ihr Arbeitsverhalten zu reflektieren
+
+## Grund aus Sicht der Lehrperson
+Die Lehrperson sieht ob Sie je nachdem Probleme oder Bedenken haben
+
+## Anleitung des Lernjournals
+
+Die Lernenden setzen sich (10/15 Minuten) noch einmal mit den Inhalten auseinander, mit denen sie sich während der Verarbeitungsphase befasst haben, und halten ihre Erkenntnisse schriftlich fest. 
+Dabei orientieren sie sich an bestimmten Leitfragen und beantworten sie, zum Beispiel:
+
+* Das habe ich gemacht.
+* Das habe ich gelernt.
+* Das ist für mich persönlich wichtig.
+* Das ist mir gut gelungen.
+* So bin ich vorgegangen, damit es mir gelingt.
+* Damit hatte ich Schwierigkeiten.
+* So habe ich auf die Schwierigkeiten reagiert.
+* So habe ich mich heute gefühlt.
+* Ich bin zufrieden mit meiner Leistung, weil ...
+
