@@ -1,4 +1,4 @@
-### Lernjournal
+# Lernjournal
 
 
 ## Grund aus Sicht der Studenten
@@ -13,10 +13,18 @@ Soll die Selbstreflexion und Selbsteinschätzung der Schülerinnen und Schüler 
 ## Grund aus Sicht der Lehrperson
 Die Lehrperson sieht ob Sie je nachdem Probleme oder Bedenken haben
 
-## Anleitung des Lernjournals
+## Anleitung des Lernjournals
 
 Die Lernenden setzen sich (10/15 Minuten) noch einmal mit den Inhalten auseinander, mit denen sie sich während der Verarbeitungsphase befasst haben, und halten ihre Erkenntnisse schriftlich fest. 
 Dabei orientieren sie sich an bestimmten Leitfragen und beantworten sie, zum Beispiel:
+
+### Obligatorische Punkte
+
+* Zu Beginn des Modultages: Was ich plane, im Unterricht zu tun 
+* Am Ende des Modultages: Was habe ich erreicht?  
+* Zwei bis drei Punkte der 'Zusätzlichen Punkte' beantworten
+
+### Zusätzlichen Punkte
 
 * Das habe ich gemacht.
 * Das habe ich gelernt.
