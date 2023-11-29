@@ -11,7 +11,8 @@ Soll die Selbstreflexion und Selbsteinschätzung der Schülerinnen und Schüler 
 * Die Lernenden werden angeregt, ihre Leistungen und ihr Arbeitsverhalten zu reflektieren
 
 ## Grund aus Sicht der Lehrperson
-Die Lehrperson sieht ob Sie je nachdem Probleme oder Bedenken haben
+* Feedback an die Lehrperson
+* Die Lehrperson kann allenfalls auf ihr Feedback eingehen und Sie unterstützen falls nötig
 
 ## Anleitung des Lernjournals
 
