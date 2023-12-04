@@ -144,10 +144,63 @@ Compressed configuration from 7383 bytes to 3601 bytes[OK]
 [OK]
 ```
 
-Configurating DHCP on the Layer 3 Switch
+Enable Inter VLAN Routing on the Layer 3 Switch
+```
+Switch>enable
+Switch#config terminal
+Switch(config)#vlan 10
+Switch(config-vlan)#vlan 20
+Switch(config-vlan)#exit
+Switch(config)#int vlan 10
+Switch(config-if)#
+%LINK-5-CHANGED: Interface Vlan10, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan10, changed state to up
+
+Switch(config-if)#ip add 192.168.1.1 255.255.255.0
+Switch(config-if)#no sh
+Switch(config-if)#exit
+Switch(config)#int vlan 20
+Switch(config-if)#
+%LINK-5-CHANGED: Interface Vlan20, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan20, changed state to up
+
+Switch(config-if)#ip add 192.168.2.1 255.255.255.0
+Switch(config-if)#no shutdown
+Switch(config-if)#exit
+Switch(config)#
+Switch#
 ```
 
+Configurating DHCP on the Layer 3 Switch
 ```
+Switch#enable
+Switch#config terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#service dhcp
+Switch(config)#ip dhcp pool VLAN10
+Switch(dhcp-config)#network 192.168.1.0 255.255.255.0
+Switch(dhcp-config)#default-router 192.168.1.1
+Switch(dhcp-config)#dns-server 192.168.1.1
+Switch(dhcp-config)#exit
+Switch(config)#ip dhcp pool VLAN20
+Switch(dhcp-config)#network 192.168.2.0 255.255.255.0
+Switch(dhcp-config)#default-router 192.168.2.1
+Switch(dhcp-config)#dns-server 192.168.2.1
+Switch(dhcp-config)#exit
+Switch(config)#
+```
+
+ENABLE Routing on the layer 3 switch
+```
+Switch(config)#ip routing
+Switch(config)#do write
+Building configuration...
+Compressed configuration from 7383 bytes to 3601 bytes[OK]
+[OK]
+```
+
 
 
 # Commands
