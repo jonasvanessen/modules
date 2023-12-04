@@ -57,6 +57,99 @@ Click PC1->Desktop->IP configuration. Then enable DHCP:
 ![Alt text](image.png)
 
 
+## VLAN Configs
+
+Source: [Link](https://www.youtube.com/watch?v=14--qiy1rsI)
+Add Powersupply to Layer 3 Switch, in this example **3650-24PS**
+
+Configuration for Layer 2 Switches (Access Layer) in this example with: **2960-24TT**
+
+```
+# Enable Access Port which connects to pc
+Switch>enable
+Switch#config terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#vlan 10
+Switch(config-if)#int fa0/1
+Switch(config-if)#switchp
+Switch(config-if)#switchport mode access
+Switch(config-if)#switchport access vlan 10
+
+
+# Enable Trunk Port which connects to layer 3 switch
+Switch>enable
+Switch#config terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#int fa0/2
+Switch(config-if)#switchport mode trunk
+
+Switch(config-if)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to up
+
+Switch(config-if)#exit
+Switch(config)#do write
+Building configuration...
+[OK]
+
+```
+
+Layer 2 Switch which manages two vlans
+```
+Switch>enable
+Switch#config terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#vlan 10
+Switch(config-vlan)#vlan 20
+Switch(config-vlan)#exit
+
+# Ports
+Switch(config)#int fa0/1
+Switch(config-if)#switchport mode access
+Switch(config-if)#switchport access vlan 10
+Switch(config-if)#exit
+Switch(config)#int fa0/2
+Switch(config-if)#switchport mode access
+Switch(config-if)#switchport access vlan 20
+Switch(config-if)#exit
+Switch(config)#do write
+Building configuration...
+[OK]
+Switch(config)#
+
+
+# Trunk Port
+Switch#config terminal
+Switch(config)#int fa0/3
+Switch(config-if)#switchport mode trunk
+Switch(config-if)#exit
+Switch(config)#do write
+Building configuration...
+[OK]
+
+```
+
+Configurating the Layer 3 Trunks
+```
+Switch>enable
+Switch#config terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#int range gig1/0/1-3
+Switch(config-if-range)#switchport mode trunk
+Switch(config-if-range)#exit
+Switch(config)#do write
+Building configuration...
+Compressed configuration from 7383 bytes to 3601 bytes[OK]
+[OK]
+```
+
+Configurating DHCP on the Layer 3 Switch
+```
+
+```
+
+
 # Commands
 
 ## do write memory
