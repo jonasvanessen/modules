@@ -215,6 +215,8 @@ Compressed configuration from 7383 bytes to 3601 bytes[OK]
 
 [Source](https://www.youtube.com/watch?v=Lyc_EXEhJsk)
 
+Hints to solve the [Problem](https://community.cisco.com/t5/switching/how-to-configure-multiple-vlans-on-a-firewall-with-a-l3-switch/td-p/4583434)
+
 Security Levels
 * 100 -> Inside network which is trusted
 * 0 -> Nothing is trusted, high level security
