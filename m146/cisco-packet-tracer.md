@@ -231,5 +231,6 @@ However, in Cisco Packet Tracer, due to its simulation nature, the write memory 
 # Trouble Shooting
 
 If you hit the message 'Packet Tracer simulation buffer full' when running a simulation, try the following!
+[Source](https://www.reddit.com/r/ccna/comments/np5zb8/packet_tracer_simulation_buffer_full/)
 
 ![Alt text](image-3.png)
