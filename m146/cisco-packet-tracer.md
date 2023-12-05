@@ -211,6 +211,53 @@ Compressed configuration from 7383 bytes to 3601 bytes[OK]
 [OK]
 ```
 
+## Firewall
+
+[Source](https://www.youtube.com/watch?v=Lyc_EXEhJsk)
+
+Security Levels
+* 100 -> Inside network which is trusted
+* 0 -> Nothing is trusted, high level security
+
+```
+ciscoasa#
+ciscoasa#conf t
+ciscoasa(config)#hostname PERIMETER-FW
+PERIMETER-FW(config)#exit
+PERIMETER-FW#config t
+PERIMETER-FW(config)#int gig1/1 
+PERIMETER-FW(config-if)#no shut
+
+PERIMETER-FW(config-if)#int gig1/2
+PERIMETER-FW(config-if)#no shut
+
+PERIMETER-FW(config-if)#int gig1/1
+PERIMETER-FW(config-if)#ip add 192.168.1.1 255.255.255.0
+PERIMETER-FW(config-if)#nameif INSIDE
+INFO: Security level for "INSIDE" set to 0 by default.
+PERIMETER-FW(config-if)#security-level 100
+PERIMETER-FW(config-if)#exit
+PERIMETER-FW(config)#int gig1/2
+PERIMETER-FW(config-if)#ip add 10.0.0.1 255.255.255.0
+PERIMETER-FW(config-if)#nameif DMZ
+INFO: Security level for "DMZ" set to 0 by default.
+PERIMETER-FW(config-if)#security-level 70
+PERIMETER-FW(config-if)#
+PERIMETER-FW(config-if)#exit
+# 'write memory' in firewalls is the same like 'do write' in routers
+PERIMETER-FW(config)#wr mem
+Building configuration...
+Cryptochecksum: ffffffff9aff5e24 6f5ec2be ffffffffbff39286 ffffffffe6fd8c11
+
+1141  bytes copied in 2.826 secs (403 bytes/sec)
+[OK]
+PERIMETER-FW(config)#
+```
+
+Generate output of firewall config
+```
+PERIMETER-FW(config)#sh start
+```
 
 
 # Commands
