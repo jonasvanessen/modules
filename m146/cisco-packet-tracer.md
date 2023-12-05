@@ -3,6 +3,10 @@
 Try with
 3560-24PS
 
+## Topology
+
+![Alt text](image-1.png)
+
 ## Basic Device setup
 
 * Add Clients
@@ -61,6 +65,12 @@ Click PC1->Desktop->IP configuration. Then enable DHCP:
 
 Source: [Link](https://www.youtube.com/watch?v=14--qiy1rsI)
 Add Powersupply to Layer 3 Switch, in this example **3650-24PS**
+
+### Topology
+
+![Alt text](image-2.png)
+
+### Configuration
 
 Configuration for Layer 2 Switches (Access Layer) in this example with: **2960-24TT**
 
