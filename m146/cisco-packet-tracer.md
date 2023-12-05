@@ -227,3 +227,9 @@ However, in Cisco Packet Tracer, due to its simulation nature, the write memory 
 
 * https://computernetworking747640215.wordpress.com/2018/07/05/how-to-configure-dhcp-server-in-packet-tracer/
 * https://www.youtube.com/watch?v=dyVXVQgos4Q
+
+# Trouble Shooting
+
+If you hit the message 'Packet Tracer simulation buffer full' when running a simulation, try the following!
+
+![Alt text](image-3.png)
