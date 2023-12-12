@@ -213,6 +213,20 @@ Compressed configuration from 7383 bytes to 3601 bytes[OK]
 
 ## Firewall
 
+### Trunk Configuration
+
+In a typical Cisco ASA firewall configuration, you don't configure interfaces as trunks in the same way you would on a switch. The ASA firewall operates at Layer 3 and does not support traditional trunking as seen in Layer 2 switches. However, the ASA does support the concept of subinterfaces, which allows it to handle traffic from multiple VLANs on a single physical interface.
+
+* Subinterfaces: Instead of configuring a physical interface for each VLAN, you can create logical subinterfaces on a physical interface. Each subinterface is associated with a specific VLAN.
+* Logical VLAN Interfaces:The ASA doesn't use the concept of VLANs directly on its interfaces. Instead, it associates VLAN information with logical interfaces. Each subinterface is assigned a unique VLAN ID.
+* Security Levels: Each logical interface on the ASA is assigned a security level, which determines the trustworthiness of traffic entering that interface. Higher security levels are more trusted.
+
+In summary, while you don't configure traditional trunks on the ASA, you achieve a similar result using subinterfaces and VLAN associations. This approach allows the ASA to handle traffic from multiple VLANs on a single physical interface.
+
+#### Configure Subinterfaces
+
+
+
 ![Alt text](image-4.png)
 
 [Source](https://www.youtube.com/watch?v=Lyc_EXEhJsk)
