@@ -223,6 +223,8 @@ In a typical Cisco ASA firewall configuration, you don't configure interfaces as
 
 In summary, while you don't configure traditional trunks on the ASA, you achieve a similar result using subinterfaces and VLAN associations. This approach allows the ASA to handle traffic from multiple VLANs on a single physical interface.
 
+**I apologize for the confusion. It seems that the Cisco ASA in Packet Tracer doesn't support subinterface configuration in the same way as physical Cisco ASAs. Packet Tracer might have limitations in terms of certain features and syntax.**
+
 #### Configure Subinterfaces
 
 
