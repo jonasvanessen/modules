@@ -1,7 +1,7 @@
 # Aufgaben
 
-* Bilden Sie zweier Gruppen
-* Lösen Sie die Aufgaben zuerst individuell und diskutieren Sie danach ihren Lösungsweg
+* Arbeiten Sie alleine
+* Präsentieren Sie ihren Lösungsweg
 
 ## Aufgabe 1 - Availability / Verfügbarkeit
 
