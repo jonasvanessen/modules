@@ -1,6 +1,6 @@
 # Aufgaben
 
-* Arbeiten Sie alleine
+* Arbeiten Sie alleine, am besten ohne ChatGPT (da Sie es an der Prüfung auswendig rechnen müssen)
 * Präsentieren Sie ihren Lösungsweg
 
 ## Aufgabe 1 - Availability / Verfügbarkeit
