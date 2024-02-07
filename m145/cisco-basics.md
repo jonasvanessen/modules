@@ -199,3 +199,71 @@ Examine the startup configuration file.
 Which command will display the contents of NVRAM?
 
 Are all the changes that were entered recorded in the file?
+
+
+# Part 3: Configure the Switch Management Interface
+Configure S1 and S2 with an IP address.
+
+## Step 1: Configure S1 with an IP address.
+Switches can be used as plug-and-play devices. This means that they do not need to be configured for them to work. Switches forward information from one port to another based on MAC addresses.
+
+Question:
+If this is the case, why would we configure it with an IP address?
+
+Answer: VLAN Configuration: While basic switching operations rely on MAC addresses, advanced features such as VLANs (Virtual Local Area Networks) often require IP connectivity for management and configuration.
+
+And more: Monitoring and Logging, Remote Management, Quality of Service (QoS) Configuration
+
+Use the following commands to configure S1 with an IP address.
+```
+S1# configure terminal
+
+Enter configuration commands, one per line. End with CNTL/Z.
+
+S1(config)# interface vlan 1
+
+S1(config-if)# ip address 192.168.1.253 255.255.255.0
+
+S1(config-if)# no shutdown
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan1, changed state to up
+
+S1(config-if)#
+
+S1(config-if)# exit
+
+S1#
+```
+Question:
+Why do you enter the no shutdown command?
+
+Answer: In the simplest sense, shutdown turns the interface off. no shutdown turns the interface on (enables it).
+
+
+## Step 3: Verify the IP address configuration on S1 and S2.
+Use the show ip interface brief command to display the IP address and status of all the switch ports and interfaces. You can also use the show running-config command.
+
+```
+S1#show ip interface brief
+
+or...
+
+S1#show ip interface brief
+```
+
+## Step 4: Save configurations for S1 and S2 to NVRAM.
+
+```
+S1# copy running-config startup-config
+
+Destination filename [startup-config]?[Enter]
+
+Building configuration...
+
+[OK]
+
+Close Configuration Window for S1
+```
+# ARP Request
+
+Enter the arp -d command to clear the ARP table.
