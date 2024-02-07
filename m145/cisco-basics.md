@@ -267,3 +267,50 @@ Close Configuration Window for S1
 # ARP Request
 
 Enter the arp -d command to clear the ARP table.
+
+Clear arp table
+```
+arp -d
+```
+List
+```
+arp -a 
+```
+
+Show arp table on a switch
+```
+Switch>show mac-address-table
+
+          Mac Address Table
+-------------------------------------------
+
+Vlan    Mac Address       Type        Ports
+----    -----------       --------    -----
+
+   1    0002.1640.8d75    DYNAMIC     Fa0/3
+   1    000c.85cc.1da7    DYNAMIC     Fa0/1
+   1    0060.7036.2849    DYNAMIC     Fa0/2
+   1    00e0.f7b1.8901    DYNAMIC     Gig0/1
+```
+
+On a Router
+
+```
+Router>enable
+
+Router#show mac-address-table
+
+          Mac Address Table
+-------------------------------------------
+
+Vlan    Mac Address       Type        Ports
+----    -----------       --------    -----
+
+
+Router#show arp
+
+
+Protocol  Address          Age (min)  Hardware Addr   Type   Interface
+Internet  172.16.31.1             -   00E0.F7B1.8901  ARPA   GigabitEthernet0/0
+Internet  172.16.31.2             1   000C.85CC.1DA7  ARPA   GigabitEthernet0/0
+```
