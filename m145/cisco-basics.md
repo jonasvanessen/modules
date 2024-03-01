@@ -314,3 +314,16 @@ Protocol  Address          Age (min)  Hardware Addr   Type   Interface
 Internet  172.16.31.1             -   00E0.F7B1.8901  ARPA   GigabitEthernet0/0
 Internet  172.16.31.2             1   000C.85CC.1DA7  ARPA   GigabitEthernet0/0
 ```
+
+
+# Router
+From SNMP exercise
+```
+Router>enable
+Router#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface g0/0
+Router(config-if)#ip address 192.168.2.1 255.255.255.0
+Router(config-if)#no shutdown
+Router(config-if)#
+```
