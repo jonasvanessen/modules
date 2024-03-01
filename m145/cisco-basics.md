@@ -1,4 +1,4 @@
-﻿# Cisco Basics
+# Cisco Basics
 
 # Part 1: Verify the Default Switch Configuration
 ## Step 1: Enter privileged EXEC mode.
@@ -239,6 +239,23 @@ Why do you enter the no shutdown command?
 
 Answer: In the simplest sense, shutdown turns the interface off. no shutdown turns the interface on (enables it).
 
+### Default Gateway
+
+Sometimes gateway is needed:
+```
+LAN-A(config)#ip default-gateway 192.168.0.63
+```
+
+### Configure router
+
+```
+CustomerRouter(config)#interface g0/1
+CustomerRouter(config-if)#ip address 192.168.0.65
+% Incomplete command.
+CustomerRouter(config-if)#ip address 192.168.0.65 255.255.255.192
+CustomerRouter(config-if)#no shutdown
+```
+
 
 ## Step 3: Verify the IP address configuration on S1 and S2.
 Use the show ip interface brief command to display the IP address and status of all the switch ports and interfaces. You can also use the show running-config command.
@@ -315,6 +332,79 @@ Internet  172.16.31.1             -   00E0.F7B1.8901  ARPA   GigabitEthernet0/0
 Internet  172.16.31.2             1   000C.85CC.1DA7  ARPA   GigabitEthernet0/0
 ```
 
+# Subnetting
+
+(/25) 11111111.11111111.11111111.10000000
+
+Dotted decimal subnet mask equivalent:
+
+Number of subnets? Number of hosts?
+```
+Anzahl Subnetze: Number of Subnets=2^(CIDR - Total bits in network portion)
+2^(25-24) = 2
+
+Bei /18
+2^(18-16) = 4
+
+
+Anzahl möglicher Hosts bestimmen: 2^(32-CIDR) -2 = Anzahl Hosts
+
+2^(32-25)-2 = 126
+```
+
+(/29) 11111111.11111111.11111111.11111000
+
+Dotted decimal subnet mask equivalent:
+
+Number of subnets? Number of hosts?
+
+```
+Anzahl Subnetze: Number of Subnets=2^(CIDR - Total bits in network portion)
+2^(29-24) = 32
+
+Anzahl möglicher Hosts bestimmen: 2^(32-CIDR) -2 = Anzahl Hosts
+
+2^(32-29)-2 = 6
+```
+## IPv4 - Netz-, Broadcast-, und Host-Adressen bestimmen
+
+```
+# Schritt 1: IPv4 Adresse in binäre Form umwandeln
+Address:   192.168.6.4          11000000.10101000.00000110. 00000100
+
+# Schritt 2: Netzmaske und Wildcard in binäre Form umwandeln
+Netmask:   255.255.255.0 = 24   11111111.11111111.11111111. 00000000
+                                <=        24 Eins       =>
+Wildcard:  0.0.0.255            00000000.00000000.00000000. 11111111
+                                                            <8 Eins>
+                                24 Bits + 8 Bits = 32 Bits = 4 Bytes
+
+# Schritt 3: Logisch UND (&) mit der IPv4-Adresse & Netzmaske ergibt Netzadresse
+Address:   192.168.6.4          11000000.10101000.00000110. 00000100
+ & Netmask:   255.255.255.0     11111111.11111111.11111111. 00000000
+ = Network:   192.168.6.0/24    11000000.10101000.00000110. 00000000
+
+# Schritt 4: Netzmaske + 1 ergibt HostMin
+Network:   192.168.6.0/24       11000000.10101000.00000110. 00000000
++ 1                             00000000.00000000.00000000. 00000001
+= HostMin:   192.168.6.1          11000000.10101000.00000110. 00000001
+
+# Schritt 5: Netzmaske & Wildcard = Broadcast
+Network:   192.168.6.0/24       11000000.10101000.00000110. 00000000
+& Wildcard                      00000000.00000000.00000000. 11111111
+ = Broadcast: 192.168.6.255     11000000.10101000.00000110. 11111111
+
+# Schritt 6: Broadcast - 1 ergibt HostMax
+Broadcast: 192.168.6.255     11000000.10101000.00000110. 11111111
+ -1                          00000000.00000000.00000000. 00000001
+ = HostMax: 192.168.6.254    11000000.10101000.00000110. 11111110
+
+# Schritt 7: Anzahl möglicher Hosts bestimmen: 2^(32-CIDR) -2 = Anzahl Hosts
+2^(32-24) - 2 = 254
+```
+
+=======
+
 
 # Router
 From SNMP exercise
@@ -326,4 +416,29 @@ Router(config)#interface g0/0
 Router(config-if)#ip address 192.168.2.1 255.255.255.0
 Router(config-if)#no shutdown
 Router(config-if)#
+```
+
+SNMP, [source](https://www.cisco.com/c/en/us/support/docs/ip/simple-network-management-protocol-snmp/7282-12.html) 
+```
+Router>enable
+Router#config t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#snmp-server community M145pub RO
+%SNMP-5-WARMSTART: SNMP agent on host Router is undergoing a warm start
+Router(config)#snmp-server community M145pri RW
+Router(config)#exit
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+copy run start
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+Router#
+Router#show running-config 
+.... 
+.... 
+snmp-server community public RO 
+snmp-server community private RW 
+.... 
+....
 ```
