@@ -48,8 +48,14 @@ interface vlan 99
 ip address 192.168.99.253 255.255.255.0
 ```
 
+nonnegotiate
+This command disables Dynamic Trunking Protocol (DTP) negotiation on the interface, forcing the interface to operate in access mode or trunk mode as manually configured.
+```
+SWA(config)#interface g0/1
+SWA(config-if)#switchport nonegotiate
+```
 
-
+https://itexamanswers.net/3-6-1-packet-tracer-implement-vlans-and-trunking-instructions-answer.html
 
 
 
