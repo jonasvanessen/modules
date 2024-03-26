@@ -39,7 +39,7 @@ S1(config-if)# switchport trunk native vlan 99
 
 command to verify the correct native VLAN configuration.
 ```
-show interface trun
+show interface trunk
 ```
 
 
