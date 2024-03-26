@@ -42,6 +42,14 @@ command to verify the correct native VLAN configuration.
 show interface trunk
 ```
 
+set ip address for vlan on switch
+```
+interface vlan 99
+ip address 192.168.99.253 255.255.255.0
+```
+
+
+
 
 
 
