@@ -55,7 +55,8 @@ SWA(config)#interface g0/1
 SWA(config-if)#switchport nonegotiate
 ```
 
-https://itexamanswers.net/3-6-1-packet-tracer-implement-vlans-and-trunking-instructions-answer.html
+* https://itexamanswers.net/3-6-1-packet-tracer-implement-vlans-and-trunking-instructions-answer.html
+* https://cheatography.com/muna/cheat-sheets/vlan/
 
 
 
