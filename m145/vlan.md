@@ -32,6 +32,9 @@ TRUNKING
 ```
 S1(config)# interface range g0/1 - 2
 S1(config-if)# switchport mode trunk
+
+# Configure VLAN 99 as the native VLAN for G0/1 and G0/2 interfaces on S1.
+S1(config-if)# switchport trunk native vlan 99
 ```
 
 
