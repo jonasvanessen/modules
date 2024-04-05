@@ -1,5 +1,9 @@
 # GNS3
 
+## Links
+* https://wiki.mikrotik.com/wiki/Manual:Interface/Bridge
+  
+
 ## Clients
 
 ´´´
