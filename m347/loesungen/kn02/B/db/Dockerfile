@@ -1,0 +1,5 @@
+FROM mariadb
+# ENV MARIADB_USER="jvanessen"
+# ENV MARIADB_PASSWORD="secret"
+ENV MARIADB_ROOT_PASSWORD="super-secret"
+EXPOSE 3306
