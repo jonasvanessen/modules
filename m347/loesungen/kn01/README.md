@@ -56,10 +56,6 @@ docker rm $(docker ps --filter status=exited -q)
 
 # Image löschen
 docker rmi ubuntu
-
-
-
-
 ```
 
 
