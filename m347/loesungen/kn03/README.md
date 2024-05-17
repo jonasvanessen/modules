@@ -11,10 +11,19 @@ docker network ls
 docker inspect tbz
 
 
-docker run --name busybox1 -d busybox
-docker run --name busybox2 -d busybox
-docker run --name busybox3 -d --network tbz busybox
-docker run --name busybox4 -d --network tbz busybox
+docker run --name busybox1 -it -p 8001:80 busybox # 172.17.0.2
+docker run --name busybox2 -it -p 8002:80 busybox # 172.17.0.3
+docker run --name busybox3 -it -p 8003:80 --network tbz busybox # 172.18.0.2
+docker run --name busybox4 -it -p 8004:80 --network tbz busybox # 172.18.0.3
+
+# IP Specific
+docker network create --subnet=172.18.0.0/16 tbz # creates the network with the name 'tbz' Subnet in CIDR format that represents a network segment
+
+
+# The -it flag combines both -i and -t together — which keeps STDIN open and allocates a pseudo-tty. This -ttytells Docker to create a virtual terminal session within your container. Using the --rm flag tells Docker to tidy up your container and remove the filesystem when it exits.
+
+# The issue is that the busybox container doesn't have a default long-running process and exits immediately after completing its task. To keep the container running, you can specify a command that will keep it active. One common approach is to run a shell in an infinite loop or use a command that keeps the container alive. Here are two examples:
+
 
 
 
@@ -24,4 +33,6 @@ docker inspect
 
 ![alt text](image-1.png)
 ![alt text](image.png)
+
+
 
