@@ -1,0 +1,26 @@
+name: m347-kn04a
+services:
+  web:
+    build: .
+    container_name: m347-kn04a-web
+    ports:
+      - "80:80"
+    networks:
+      - kn04net
+  db:
+    image: "mariadb:latest"
+    container_name: m347-kn04a-db
+    environment:
+      - MARIADB_ROOT_PASSWORD="super-secret"
+    ports:
+      - "3306:3306"
+    networks:
+      - kn04net
+networks:
+  kn04net:
+    ipam: # Custom IPAM driver, instead of the default.
+      driver: default
+      config: 
+        - subnet: 172.10.0.0/16
+          ip_range: 172.10.5.0/24
+          gateway: 172.10.5.254     

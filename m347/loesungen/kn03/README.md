@@ -1,8 +1,6 @@
 # A)
 
-
-
-´´´
+```
 # Create network
 # Apparently Docker uses the following ranges by default:
 # 172.17.0.0/16", 172.18.0.0/16", "172.19.0.0/16", "172.20.0.0/14", "172.24.0.0/14" "172.28.0.0/14", "192.168.0.0/16".
@@ -33,11 +31,11 @@ docker network create --subnet=172.18.0.0/16 tbz # creates the network with the 
 
 # Check IP's
 docker inspect busybox1 | grep IP
-´´´
+```
 
 ## Namensauflösung
 
-* Die Netzwerk funktionieren grundsätzlich gleich, aber mit dem Unterschied, dass die Namensauflösung im eigenen Netzwerk (user-defined bridges)[https://docs.docker.com/network/drivers/bridge/#differences-between-user-defined-bridges-and-the-default-bridge] funktioniert. Hinweis: Automatische DNS Auflösung zwischen containers.
+* Die Netzwerk funktionieren grundsätzlich gleich, aber mit dem Unterschied, dass die Namensauflösung im eigenen Netzwerk [user-defined bridges](https://docs.docker.com/network/drivers/bridge/#differences-between-user-defined-bridges-and-the-default-bridge) funktioniert. Hinweis: Automatische DNS Auflösung zwischen containers.
 * In KN02 hatten wir den Parameter --Link verwendet, damit die beiden Container miteinander kommunizieren konnten. Da die Namensauflösung im Default Bridge nicht funktioniert war dies notwendig.
 
 ![alt text](image-1.png)
