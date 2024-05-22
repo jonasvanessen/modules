@@ -2,14 +2,14 @@ name: m347-kn04a
 services:
   web:
     build: .
-    container_name: m347-kn04a-web
+    container_name: m347_kn04a_web # Cannot use - within the name
     ports:
       - "80:80"
     networks:
       - kn04net
   db:
     image: "mariadb:latest"
-    container_name: m347-kn04a-db
+    container_name: m347_kn04a_db
     environment:
       - MARIADB_ROOT_PASSWORD="super-secret"
     ports:
