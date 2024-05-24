@@ -17,6 +17,10 @@ docker compose create # creates the containers
 docker compose start # starts the created containers
 docker compose attach # attaches the input and output to your console
 
+# PHP File Info
+# 'REMOTE_ADDR' -> The IP address from which the user is viewing the current page.
+# 'SERVER_ADDR' -> The IP address of the server under which the current script is executing.
+# Src: https://www.php.net/manual/en/reserved.variables.server.php#:~:text='%20REMOTE_ADDR%20',the%20REMOTE_ADDR%20of%20the%20user.
 
 
 
