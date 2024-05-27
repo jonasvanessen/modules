@@ -1,7 +1,9 @@
 <?php
-    //database
-    $servername = "m347-kn02b-db";
+    $servername = $_ENV['DBSERVER'];
+    // 	Alternative: $servername = $_SERVER['DBSERVER'];
+    // 	Alternative: $servername = getenv("DBSERVER");
     $username = "root";
+    // Mehr Code
     $password = "super-secret";
     $dbname = "mysql";
 

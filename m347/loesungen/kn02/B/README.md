@@ -21,6 +21,7 @@ docker run --name m347-kn02b-web -d -p 80:80 --link m347-kn02b-db jonasvanessen/
 
 # Push
 docker push jonasvanessen/m347:kn02b-db
+docker push jonasvanessen/m347:kn02b-web
 ```
 
 ![alt text](image-1.png)

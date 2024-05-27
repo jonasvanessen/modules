@@ -28,5 +28,25 @@ docker compose attach # attaches the input and output to your console
 
 ![alt text](image.png)
 ![alt text](image-1.png)
+![alt text](image-2.png)
+
+
+Erklärung zum Fehler: In KN02 hatten wir in db.php hardkodierte Werte eingetragen für den verlinkten Server. Da unser DB-Container nun einen anderen Namen hat, funktioniert diese Einstellung nicht mehr.
+
+Eine Mögliche Lösung ist, hier Environment-Variablen zu verwenden und diese dann beim Erstellen des Containers anzugeben (via Docker Compose Anweisung). Man muss dafür aber zuerst ein neues Image mit der entsprechenden Änderung in das private Repository pushen oder wieder direkt mit dem build-Befehl in Docker-Compose arbeiten.
+
+```
+<?php
+	$servername = $_ENV['DBSERVER'];
+	// 	Alternative: $servername = $_SERVER['DBSERVER'];
+	// 	Alternative: $servername = getenv("DBSERVER");
+	$username = "root";
+	// Mehr Code
+?>
+
+```
+
+# B) Docker Compose: Cloud
+
 
 

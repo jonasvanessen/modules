@@ -1,0 +1,26 @@
+name: m347-kn04b
+services:
+  web:
+    image: "jonasvanessen/m347:kn02b-web"
+    container_name: m347_kn04b_web # Cannot use - within the name
+    ports:
+      - "80:80"
+    networks:
+      - kn04bnet
+    environment:
+      - DBSERVER=m347_kn04b_db
+  db:
+    image: "jonasvanessen/m347:kn02b-db"
+    container_name: m347_kn04b_db
+    ports:
+      - "3306:3306"
+    networks:
+      - kn04bnet
+networks:
+  kn04bnet:
+    ipam: # Custom IPAM driver, instead of the default.
+      driver: default
+      config: 
+        - subnet: 172.11.0.0/16
+          ip_range: 172.11.5.0/24
+          gateway: 172.11.5.254     
