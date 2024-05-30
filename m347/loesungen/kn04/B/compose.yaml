@@ -23,4 +23,4 @@ networks:
       config: 
         - subnet: 172.11.0.0/16
           ip_range: 172.11.5.0/24
-          gateway: 172.11.5.254     
+          gateway: 172.11.5.254     tr
