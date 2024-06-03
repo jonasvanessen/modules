@@ -1,0 +1,19 @@
+name: m347-kn05c
+services:
+  nginx1:
+    image: nginx:alpine
+    volumes:
+      - type: volume
+        source: nginx-data
+        target: /mnt/nginx-volume
+      - type: bind
+        source: /Users/vanessenjonas/Documents/workspace-tbz/modules/m347/loesungen/kn05/A/localMount
+        target: /mnt/localMount
+      - type: tmpfs
+        target: /mnt/tmpfs
+  nginx2:
+    image: nginx:alpine
+    volumes:
+      - nginx-data:/mnt/nginx-volume
+volumes:
+  nginx-data:
