@@ -56,3 +56,10 @@ docker exec -it web6 /bin/bash
 # C
 
 Siehe [compose.yml](compose.yaml)
+
+
+
+## Debug log AWS
+```
+/var/log/cloud-init-output.log
+```
