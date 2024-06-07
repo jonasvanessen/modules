@@ -53,6 +53,19 @@ Node-1 ist im status nicht mehr aufgelistet
 ![alt text](image-4.png)
 
 
+microk8s: Verwende diesen Befehl, um das MicroK8s-System selbst zu verwalten. Dies umfasst das Installieren, Starten, Stoppen und Verwalten von Add-ons innerhalb von MicroK8s.
+
+```
+Beispiel: microk8s start, microk8s stop, microk8s enable dns
+```
+
+microk8s kubectl: Verwende diesen Befehl, um mit dem Kubernetes-Cluster zu interagieren, das von MicroK8s bereitgestellt wird. Dies umfasst das Verwalten von Ressourcen innerhalb des Clusters, wie Pods, Deployments, Services usw.
+```
+Beispiel: microk8s kubectl get pods, microk8s kubectl apply -f my-deployment.yaml
+```
+
+
+
 
 
 
