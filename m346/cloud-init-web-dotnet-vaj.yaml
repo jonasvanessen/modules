@@ -1,0 +1,72 @@
+#cloud-config
+users:
+  - name: ubuntu
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    groups: users, admin
+    home: /home/ubuntu
+    shell: /bin/bash
+    ssh_authorized_keys:
+      - ssh-ras AAAAB3NzaC1yc2EAAAADAQABAAABAQCpYQGN6ZsQ+5UJzDz05HogRp0sTBfaore2SjtIpyIc0hyHRQMjw6zeG7+BHglRej/2nXKkRVvXfAzzYQoNxvh38ZcXaqp600UQ1T8zmlU700jvSBew9/UxyvGC9w0iClq/73tMX7k38dUEJTrNVhatHlZYdjbDxKp6mwIFiFpDQnyz3FKfc26gl+wF5DFCcIiRQyIS7iG5G+3drBWwt7FNYxAgcUHZCCx9cyOJw8VqOB0JxvztBXbOS2PJINAaa4jpGIP4n+iLhGY0q87fizLFEz9A8MX3hQVqLXOH1XDtQybv+J4qOOYSAr58ASEkpYxZyJyRxnPfXJyCPs0keIvlkn02-keypair1
+ssh_pwauth: true
+disable_root: false
+package_update: true   
+packages:
+  - curl
+  - wget
+  - nginx
+  - aspnetcore-runtime-6.0
+write_files:
+  - content: |
+      [Unit]
+      Description=Demo Shop
+      [Service]
+      WorkingDirectory=/var/www/app
+      ExecStart=/usr/bin/dotnet /var/www/app/ShopDemo.dll
+      Restart=always
+      RestartSec=10
+      KillSignal=SIGINT
+      SyslogIdentifier=dotnet-example
+      User=www-data
+      Environment=ASPNETCORE_ENVIRONMENT=Production
+      Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false
+      [Install]
+      WantedBy=multi-user.target
+    path: /etc/systemd/system/shop-app.service
+  - content: |
+      server {
+        listen        80;
+        server_name   default;
+        location / {
+          proxy_pass         http://127.0.0.1:5000;
+          proxy_http_version 1.1;
+          proxy_set_header   Upgrade $http_upgrade;
+          proxy_set_header   Connection keep-alive;
+          proxy_set_header   Host $host;
+          proxy_cache_bypass $http_upgrade;
+          proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
+          proxy_set_header   X-Forwarded-Proto $scheme;
+        }
+      }
+    path: /home/ubuntu/nginx
+runcmd:
+  - sudo git clone https://gitlab.com/ch-tbz-it/Stud/m346/m346scripts.git /home/ubuntu/m346scripts
+  # install mongodb shell
+  - sudo wget -qO- https://www.mongodb.org/static/pgp/server-6.0.asc | sudo tee /etc/apt/trusted.gpg.d/server-6.0.asc
+  - sudo echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+  - sudo apt-get update
+  - sudo apt-get install -y mongodb-mongosh
+  # import mongodb collections
+  - mongosh "mongodb+srv://my-mongo-cluster.1xlya.mongodb.net/" -u tbzjonasvanessen -p 3uyRX1TELYQ60Z8J < /home/ubuntu/m346scripts/KN06/shop-database-mongodb.txt
+  # install App
+  - sudo mkdir /var/www
+  - sudo mkdir /var/www/app
+  - sudo sed -i 's/<clusterUrl>/my-mongo-cluster.1xlya.mongodb.net/g' /home/ubuntu/m346scripts/KN06/dotnet/appsettings.json
+  - sudo sed -i 's/<username>/tbzjonasvanessen/g' /home/ubuntu/m346scripts/KN06/dotnet/appsettings.json
+  - sudo sed -i 's/<password>/3uyRX1TELYQ60Z8J/g' /home/ubuntu/m346scripts/KN06/dotnet/appsettings.json
+  - sudo cp -r /home/ubuntu/m346scripts/KN06/dotnet/* /var/www/app/
+  - sudo systemctl enable shop-app.service
+  - sudo systemctl start shop-app.service
+  - sudo service nginx start
+  - sudo cp /home/ubuntu/nginx /etc/nginx/sites-available/default
+  - sudo nginx -s reload
+  
