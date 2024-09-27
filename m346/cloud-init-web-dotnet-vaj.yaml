@@ -6,7 +6,7 @@ users:
     home: /home/ubuntu
     shell: /bin/bash
     ssh_authorized_keys:
-      - ssh-ras AAAAB3NzaC1yc2EAAAADAQABAAABAQCpYQGN6ZsQ+5UJzDz05HogRp0sTBfaore2SjtIpyIc0hyHRQMjw6zeG7+BHglRej/2nXKkRVvXfAzzYQoNxvh38ZcXaqp600UQ1T8zmlU700jvSBew9/UxyvGC9w0iClq/73tMX7k38dUEJTrNVhatHlZYdjbDxKp6mwIFiFpDQnyz3FKfc26gl+wF5DFCcIiRQyIS7iG5G+3drBWwt7FNYxAgcUHZCCx9cyOJw8VqOB0JxvztBXbOS2PJINAaa4jpGIP4n+iLhGY0q87fizLFEz9A8MX3hQVqLXOH1XDtQybv+J4qOOYSAr58ASEkpYxZyJyRxnPfXJyCPs0keIvlkn02-keypair1
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCpYQGN6ZsQ+5UJzDz05HogRp0sTBfaore2SjtIpyIc0hyHRQMjw6zeG7+BHglRej/2nXKkRVvXfAzzYQoNxvh38ZcXaqp600UQ1T8zmlU700jvSBew9/UxyvGC9w0iClq/73tMX7k38dUEJTrNVhatHlZYdjbDxKp6mwIFiFpDQnyz3FKfc26gl+wF5DFCcIiRQyIS7iG5G+3drBWwt7FNYxAgcUHZCCx9cyOJw8VqOB0JxvztBXbOS2PJINAaa4jpGIP4n+iLhGY0q87fizLFEz9A8MX3hQVqLXOH1XDtQybv+J4qOOYSAr58ASEkpYxZyJyRxnPfXJyCPs0keIvlkn02-keypair1
 ssh_pwauth: true
 disable_root: false
 package_update: true   
