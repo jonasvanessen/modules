@@ -1,6 +1,6 @@
 # LB3 - Auftrag - Penetrationtesting
 
-[TOC]
+
 
 ## Lernziele
 Die LB3 sollte Sie befähigen folgende Lernziele zu erreichen:
