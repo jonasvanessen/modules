@@ -16,7 +16,7 @@
 - LB1 (30%) Vortrag OWASP (20 min [pro Team zu 2 Personen](https://tbzedu-my.sharepoint.com/:x:/g/personal/jonas_vanessen_tbz_ch/IQARYXvWqOtzSbgFrKNkc9p0AdDFOvDBV28Oe14JReOw51k))
 - LB2 (35%) Schriftliche Prüfung, `close-book`, 30-40 min [mit 2-3 Hauptfragen und 2-3 Nebenfragen aus dieser Liste](https://github.com/jonasvanessen/modules/blob/main/m183/fragenkatalog.md)
 - LB3 (35%) Auftrag Penetrationstesting als Projektarbeit zu 2 Personen.<br> Sie machen und zeigen eine [Sicherheitsumsetzung in einer Applikation](https://gitlab.com/ch-tbz-it/Stud/m183/lb2-applikation)
-  &#9997; [Auftrag-Penetrationtesting](https://gitlab.com/harald.mueller/aktuelle.kurse/-/blob/master/m183/Auftrag-Penetrationtesting.md)
+  &#9997; [Auftrag-Penetrationtesting](https://github.com/jonasvanessen/modules/blob/main/m183/Auftrag-Penetrationtesting.md)
 
 ## Ablaufplan
 
