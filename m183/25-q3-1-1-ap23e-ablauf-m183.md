@@ -4,6 +4,11 @@
 
 [weitere TBZ Unterlagen -> https://gitlab.com/ch-tbz-it/Stud/m183/m183](https://gitlab.com/ch-tbz-it/Stud/m183/m183)
 
+## Git usernames Lehrperson:
+* gitlab user: vanessenjonas (Rolle Reporter)
+* github user: jonasvanessen
+
+
 ## Themenüberblick
 
 [Themenüberblick](https://gitlab.com/ch-tbz-it/Stud/m183/m183/-/tree/main/0%20Themen%C3%BCberblick)
