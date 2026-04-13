@@ -42,7 +42,7 @@
 
 ## Rahmenbedingungen
 
-Das Open Web Applicaiton Security Project (OWASP) ist eine weltweite non-Profit Organisation, die sich zum Ziel setzt, Qualität und Sicherheit von Software zu verbessern. Es ist das Ziel, Entwickler, Designer, Softwarearchitekten für potenzielle Schwachstellen zu sensibilisieren und aufzuzeigen, wie sich diese vermeiden lassen. Die folgenden „[OWASP Top Ten](https://owasp.org/Top10)“ stellen unter Web-Sicherheitsexperten einen aner-kannten Konsens dar, was die derzeit kritischen Lücken in Web-Anwendungen betrifft (stand 2025):
+Das Open Worldwide Application Security Project (OWASP) ist eine weltweite non-Profit Organisation, die sich zum Ziel setzt, Qualität und Sicherheit von Software zu verbessern. Es ist das Ziel, Entwickler, Designer, Softwarearchitekten für potenzielle Schwachstellen zu sensibilisieren und aufzuzeigen, wie sich diese vermeiden lassen. Die folgenden „[OWASP Top Ten](https://owasp.org/Top10)“ stellen unter Web-Sicherheitsexperten einen aner-kannten Konsens dar, was die derzeit kritischen Lücken in Web-Anwendungen betrifft (stand 2025):
 
 1. [A01:2025 - Broken Access Control](https://owasp.org/Top10/2025/A01_2025-Broken_Access_Control/)
 2. [A02:2025 - Security Misconfiguration](https://owasp.org/Top10/2025/A02_2025-Security_Misconfiguration/)
