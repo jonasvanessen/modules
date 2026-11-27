@@ -1,6 +1,6 @@
 # Vim Navigation Cheat Sheet
 
-## File & Line Jumping
+## File and Line Jumping
 | Action | Command(s) |
 | :--- | :--- |
 | **Go to line `N`** (e.g., line 42) | `42G`, `42gg`, or `:42` + `Enter` |
@@ -10,7 +10,7 @@
 
 ---
 
-## In-Line & Word Movement
+## In-Line and Word Movement
 | Action | Command |
 | :--- | :--- |
 | **Start of line** | `0` |
